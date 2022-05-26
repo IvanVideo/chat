@@ -20,7 +20,7 @@ function Navbar() {
           >
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            My Chat
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
