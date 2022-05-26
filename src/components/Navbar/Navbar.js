@@ -5,8 +5,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import { NavLink } from 'react-router-dom';
 
-function Navbar() {
+function Navbar({ loggedIn }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -22,7 +23,14 @@ function Navbar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             My Chat
           </Typography>
-          <Button color="inherit">Login</Button>
+          {
+            loggedIn ?
+              <Button color="inherit">Logout</Button>
+              :
+              <NavLink to='/signin'>
+                <Button color="inherit">Login</Button>
+              </NavLink>
+          }
         </Toolbar>
       </AppBar>
     </Box>
